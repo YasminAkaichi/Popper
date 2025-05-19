@@ -98,12 +98,7 @@ class Popper():
         # generator that builds programs
         # AC: all very hacky until the refactoring is complete
         with settings.stats.duration('init'):
-            if settings.single_solve:
-                from . gen2 import Generator
-            elif settings.max_rules == 2 and not settings.pi_enabled:
-                from . gen3 import Generator
-            else:
-                from . generate import Generator
+            from . generate import Generator
             generator = self.generator = Generator(settings, bkcons)
 
         # track the success sets of tested hypotheses

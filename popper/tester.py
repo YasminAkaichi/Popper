@@ -2,6 +2,7 @@ import os
 import time
 import pkg_resources
 from janus_swi import query_once, consult
+
 from functools import cache
 from contextlib import contextmanager
 from . util import order_prog, prog_is_recursive, rule_is_recursive, calc_rule_size, calc_prog_size, prog_hash, format_rule, format_literal, Literal
@@ -9,7 +10,7 @@ from bitarray import bitarray, frozenbitarray
 from bitarray.util import ones
 from collections import defaultdict
 from itertools import product
-
+from .util import format_literal_janus
 def format_literal_janus(literal):
     args = ','.join(f'_V{i}' for i in literal.arguments)
     return f'{literal.predicate}({args})'
@@ -483,6 +484,11 @@ class Tester():
         # return frozenset((p, arities[p]) for p in pointless)
         return pointless
 
+
+    
+
+
+
 def deduce_neg_example_recalls(settings, atoms):
     # Jan Struyf, Hendrik Blockeel: Query Optimization in Inductive Logic Programming by Reordering Literals. ILP 2003: 329-346
 
@@ -518,3 +524,4 @@ def deduce_neg_example_recalls(settings, atoms):
 
 def generate_binary_strings(bit_count):
     return list(product((0,1), repeat=bit_count))[1:-1]
+

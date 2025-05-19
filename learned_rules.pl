@@ -1,0 +1,15 @@
+complication(V0):- betweenhyoidboneandthyroid(V0).
+complication(V0):- shortneck(V0),ic(V0).
+complication(V0):- openingmouth(V0),hta(V0).
+complication(V0):- shortneck(V0),indication(V0,V1),diabetes(V0).
+complication(V0):- indication(V0,V1),intubation_duration(V0,V2),female(V0),lemonscore(V0,V3),experience(V0).
+complication(V0):- cormack(V0,V1),intubation_duration(V0,V2),hard_intubation(V0).
+complication(V0):- indication(V0,V1),experience(V0),cormack(V0,V1),high_arched_palate(V0).
+complication(V0):- asthma(V0).
+complication(V0):- number_attempts(V0,V1),largetongue(V0).
+complication(V0):- secondoperator(V0),experience(V0).
+complication(V0):- other_conditions(V0,V1),diagnostic(V0,V1).
+complication(V0):- eichman(V0),openingmouth(V0).
+complication(V0):- openingmouth(V0),experience(V0),copd(V0).
+complication(V0):- intubation_duration(V0,V1),diabetes(V0),coronary_artery_disease(V0).
+complication(V0):- selective_intubation(V0).

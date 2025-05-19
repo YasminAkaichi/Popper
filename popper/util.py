@@ -156,7 +156,9 @@ def format_literal(literal):
     pred, args = literal
     args = ','.join(f'V{i}' for i in args)
     return f'{pred}({args})'
-
+def format_literal_janus(literal):
+    args = ','.join(f'_V{i}' for i in literal.arguments)
+    return f'{literal.predicate}({args})'
 def format_rule(rule):
     head, body = rule
     head_str = ''
